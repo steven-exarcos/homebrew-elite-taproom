@@ -25,6 +25,7 @@ brew install example-tool
 ## Available Packages
 
 ### Formulas (Command-line tools)
+- **shellcast**: A command-line tool for recording and sharing terminal sessions
 - **example-tool**: A simple example tool demonstrating tap functionality
 
 ### Casks (GUI Applications)
