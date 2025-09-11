@@ -1,0 +1,21 @@
+name: Update Formula on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-formula:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - uses: dawidd6/action-homebrew-bump-formula@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          formula: ${{ github.event.repository.name }}
+          tag: ${{ github.event.release.tag_name }}
+          revision: ${{ github.sha }}
+          force: false
